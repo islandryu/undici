@@ -274,10 +274,9 @@ This message is published after a WebSocket frame is parsed from the socket.
 ```js
 import diagnosticsChannel from 'diagnostics_channel'
 
-diagnosticsChannel.channel('undici:websocket:frameReceived').subscribe(({ websocket, opcode, mask, payloadData }) => {
+diagnosticsChannel.channel('undici:websocket:frameReceived').subscribe(({ websocket, opcode, payloadData }) => {
   console.log(websocket) // the WebSocket instance
   console.log(opcode) // RFC 6455 opcode
-  console.log(mask) // false for server-sent frames
   console.log(payloadData) // payload bytes as received
 })
 ```
