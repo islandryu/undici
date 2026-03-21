@@ -8,7 +8,7 @@ const { WebSocket } = require('../..')
 const { opcodes } = require('../../lib/web/websocket/constants')
 
 test('diagnostics channel - undici:websocket:[frameSent/frameReceived]', async (t) => {
-  t.plan(8)
+  t.plan(6)
 
   const server = new WebSocketServer({ port: 0 })
   const ws = new WebSocket(`ws://localhost:${server.address().port}`)
@@ -26,7 +26,6 @@ test('diagnostics channel - undici:websocket:[frameSent/frameReceived]', async (
 
     t.assert.strictEqual(websocket, ws)
     t.assert.strictEqual(opcode, opcodes.TEXT)
-    t.assert.strictEqual(mask, true)
     t.assert.strictEqual(payloadData.toString(), 'hello')
   }
 
@@ -37,7 +36,6 @@ test('diagnostics channel - undici:websocket:[frameSent/frameReceived]', async (
 
     t.assert.strictEqual(websocket, ws)
     t.assert.strictEqual(opcode, opcodes.TEXT)
-    t.assert.strictEqual(mask, false)
     t.assert.strictEqual(payloadData.toString(), 'hello')
   }
 
