@@ -248,9 +248,8 @@ This message is published if the socket experiences an error.
 ```js
 import diagnosticsChannel from 'diagnostics_channel'
 
-diagnosticsChannel.channel('undici:websocket:socket_error').subscribe(({ error, websocket }) => {
+diagnosticsChannel.channel('undici:websocket:socket_error').subscribe((error) => {
   console.log(error)
-  console.log(websocket) // the WebSocket instance, if available
 })
 ```
 
