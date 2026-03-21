@@ -115,7 +115,3 @@ expectAssignable<DiagnosticsChannel.WebsocketFrameErrorMessage>({
   websocket,
   error: new Error('Error')
 })
-expectAssignable<DiagnosticsChannel.WebsocketSocketErrorMessage>({
-  websocket,
-  error: new Error('Error')
-})

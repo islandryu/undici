@@ -112,8 +112,4 @@ declare namespace DiagnosticsChannel {
     websocket: WebSocket;
     error: Error;
   }
-  export interface WebsocketSocketErrorMessage {
-    websocket?: WebSocket;
-    error: Error;
-  }
 }
